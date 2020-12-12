@@ -24,9 +24,11 @@ app.get('/', function(req, res) {
     console.log("Estructura base del proyecto backend");
     res.send("Estructura base del proyecto backend");
 });
-const port = 3000
-app.listen(port, () => {
-    console.log(`Running on http://localhost:${port}`)
+
+app.set('PORT', process.env.port || 3000);
+
+app.listen(app.get('PORT'), () => {
+    console.log(`Running on http://localhost:${app.get('PORT')}`)
 })
 
 module.exports = app;
