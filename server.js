@@ -6,6 +6,7 @@ const express = require('express');
 const db = require('./models');
 const app = express()
 const bodyParser = require('body-parser');
+const apiRouter = require('./routes/index.js');
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -15,6 +16,8 @@ app.use(function(req, res, next) {
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use('/api', apiRouter);
 
 // API ENDPOINTS
 /*se debe contar un una ruta por medio de método post para el inicio de sesión de la siguiente manera:
