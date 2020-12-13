@@ -6,7 +6,7 @@ const express = require('express');
 const db = require('./models');
 const app = express()
 const bodyParser = require('body-parser');
-const apiRouter = require('./routes/route.js');
+const apiRouter = require('./routes/index.js');
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
