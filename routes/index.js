@@ -3,10 +3,8 @@ const apiRouterUser = require('./api/users.js');
 const apiRouterAuth = require('./api/auth.js');
 
 
-//router.use('/users', apiRouterUsers);
+router.use('/users', apiRouterUser);
 router.use('/auth', apiRouterAuth);
 
-
-//app.post('/api/auth', controller.signin)
 
 module.exports = router;
